@@ -19,8 +19,8 @@ def run():
         print('Error 0 : File Reading Error')
         return 0
     ##auth
-    client_id = '2ecc2285f234620'
-    client_secret = '3bea3bee9abe41592cd40233ec974b523715ebf8'
+    client_id = ""
+    client_secret = ""
     client = auth_imgur(client_id,client_secret)
     #upload
     new_url_list = uploadimages(path_list,client,url_list)
