@@ -25,15 +25,17 @@ def uploadimages(path_list,client,csv_list):
                 img = client.upload_from_path(image, config = config)   
                 #upload as title and upload returns us link of url
                 #print("title: " + title + " link: " + img['link'] + "\t\t\t" + str(iterator) + "/50")
-                print("title:{title}, link:{link} \t\t\t {iterator}/50").format(title=title, link=img['link'], iterator=str(iterator))
+                print("title:{title}, link:{link} \t\t\t {iterator}/50".format(title=title, link=img['link'], iterator=str(iterator)))
                 #we return list to main so we can save it    
                 url_list.append([title, img['link']])
                 iterator = iterator + 1
             else:
                 continue
     except imgurpython.helpers.error.ImgurClientRateLimitError:
+        print("err1")
         return url_list
-    except :
+    except Exception as e:
+        print(e)
         return url_list
         
 
